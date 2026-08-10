@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MOLLY PERSONALIZADOS</title>
+
+    <link rel="stylesheet" href="css/personalizar1.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ======================================= -->
+<!-- CABECERA -->
+<!-- ======================================= -->
+
+<header class="header">
+
+    <div class="logo-container">
+
+        <img src="imagen/molly 2.1.png" alt="Logo" class="logo">
+
+    </div>
+
+   <nav class="nav">
+
+    <ul class="menu">
+
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="personalizar1.html">Personaliza</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+
+    </ul>
+
+</nav>
+
+    <div class="acciones">
+
+        <button class="icon-btn">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            Carrito (0)
+
+        </button>
+
+        <button class="icon-btn">
+
+            <i class="fa-regular fa-user"></i>
+
+            Iniciar Sesión
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!--================ CONTENEDOR PRINCIPAL ================-->
+
+<main class="container">
+
+    <!--================ IZQUIERDA ================-->
+
+    <section class="left">
+
+        <div class="viewer">
+
+            <div class="viewer-top">
+
+               <button class="btn-3d">
+                    <i class="fa-solid fa-cube"></i>
+                    3D
+                </button>
+
+            </div>
+
+      <div class="mockup">
+
+    <img
+        src="imagen/polo negro.png"
+        id="shirt"
+        class="shirt">
+
+    <img
+        id="design"
+        class="design"
+        src="">
+
+</div>
+
+            <div class="viewer-controls">
+
+    <button id="zoomOut">
+        <i class="fa-solid fa-minus"></i>
+    </button>
+
+    <button id="zoomIn">
+        <i class="fa-solid fa-plus"></i>
+    </button>
+
+    <button id="fullscreen">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+
+    <button id="rotate">
+        <i class="fa-solid fa-arrows-rotate"></i>
+    </button>
+
+</div>
+
+    </section>
+
+    <!--================ DERECHA ================-->
+
+    <aside class="right">
+
+        <div class="upload-card">
+
+            <label for="upload">
+
+                <i class="fa-regular fa-image"></i>
+
+                <h3>Haga clic para cargar</h3>
+
+                <p>o arrastre y suelte la imagen aquí</p>
+
+                <span>336 × 426 px</span>
+
+            </label>
+
+            <input type="file" id="upload">
+
+        </div>
+
+        <div class="colors">
+
+            <h3>Color del mockup</h3>
+
+            <div class="color-list">
+
+               <div class="color white" data-shirt="imagen/polo negro.png"></div>
+
+<div class="color black" data-shirt="imagen/polo negro.webp"></div>
+
+<div class="color blue" data-shirt="imagen/polo azul.webp"></div>
+
+<div class="color red" data-shirt="imagen/polo rojo.webp"></div>
+
+<div class="color green" data-shirt="imagen/polo verde.webp"></div>
+
+            </div>
+
+            <a href="#">
+
+                Color personalizado
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-header">
+
+                <h3>Maquetas similares</h3>
+
+                <a href="#">Más</a>
+
+            </div>
+
+            <div class="gallery-images">
+
+                <div class="thumb">
+                    <img src="imagen/polo blanco.png">
+                </div>
+
+                <div class="thumb">
+                    <img src="imagen/polo morado.png">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button class="download">
+
+                <i class="fa-solid fa-download"></i>
+
+                Descarga gratuita
+ 
+            </button>
+
+            <button class="editor">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Abrir en editor
+
+            </button>
+
+        </div>
+
+    </aside>
+
+</main>
+
+<script>
+
+const upload = document.getElementById("upload");
+
+const shirt = document.getElementById("shirt");
+
+const design = document.getElementById("design");
+
+
+let scale = 1;
+let rotation = 0;
+
+let posX = 0;
+let posY = 0;
+
+let dragging = false;
+let startX;
+let startY;
+
+
+//====================
+// SUBIR IMAGEN
+//====================
+
+upload.addEventListener("change",e=>{
+
+const file=e.target.files[0];
+
+if(file){
+
+design.src=URL.createObjectURL(file);
+
+design.style.display="block";
+
+}
+
+});
+
+function actualizar(){
+
+    design.style.transform = `
+        translate(${posX}px, ${posY}px)
+        translateX(-50%)
+        scale(${scale})
+        rotate(${rotation}deg)
+    `;
+
+}
+
+//====================
+// ZOOM +
+//====================
+
+document.getElementById("zoomIn").onclick = () => {
+
+    scale += 0.1;
+
+    actualizar();
+
+};
+
+//====================
+// ZOOM -
+//====================
+
+document.getElementById("zoomOut").onclick = () => {
+
+    if(scale > 0.2){
+
+        scale -= 0.1;
+
+        actualizar();
+
+    }
+
+};
+
+//====================
+// ROTAR
+//====================
+
+document.getElementById("rotate").onclick = () => {
+
+    rotation += 15;
+
+    actualizar();
+
+};
+
+//====================
+// PANTALLA COMPLETA
+//====================
+
+document.getElementById("fullscreen").onclick = () => {
+
+    const visor = document.querySelector(".viewer");
+
+    if(!document.fullscreenElement){
+
+        visor.requestFullscreen();
+
+    }else{
+
+        document.exitFullscreen();
+
+    }
+
+};
+
+design.addEventListener("mousedown",(e)=>{
+
+    dragging = true;
+
+    startX = e.clientX - posX;
+    startY = e.clientY - posY;
+
+});
+
+document.addEventListener("mousemove",(e)=>{
+
+    if(!dragging) return;
+
+    posX = e.clientX - startX;
+    posY = e.clientY - startY;
+
+    actualizar();
+
+});
+
+document.addEventListener("mouseup",()=>{
+
+    dragging = false;
+
+});
+
+document.querySelectorAll(".color").forEach(color=>{
+
+    color.addEventListener("click",()=>{
+
+        shirt.src = color.dataset.shirt;
+
+        document.querySelectorAll(".color").forEach(c=>{
+
+            c.classList.remove("active");
+
+        });
+
+        color.classList.add("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>

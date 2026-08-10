@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOLLY PERSONALIZADOS</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+
+    <!-- ======================================= -->
+    <!-- CABECERA -->
+    <!-- ======================================= -->
+
+    <header class="header">
+
+        <div class="logo-container">
+
+            <!-- CAMBIA TU LOGO AQUÍ -->
+            <img src="imagen/molly 2.1.png" alt="Logo" class="logo">
+
+        </div>
+
+       <nav class="nav">
+
+    <ul class="menu">
+
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="personalizar1.html">Personaliza</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+
+    </ul>
+
+</nav>
+
+        <div class="acciones">
+
+            <button class="icon-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Carrito (0)
+            </button>
+
+            <button class="icon-btn">
+                <i class="fa-regular fa-user"></i>
+                Iniciar Sesión
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ======================================= -->
+    <!-- SLIDER -->
+    <!-- ======================================= -->
+
+    <section class="hero">
+
+        <!-- CAMBIA TU VIDEO AQUÍ -->
+
+        <video
+            class="video-bg"
+            autoplay
+            muted
+            loop
+            playsinline>
+
+            <source src="imagen/video02.mp4" type="video/mp4">
+
+        </video>
+
+        <!-- FLECHA IZQUIERDA -->
+
+        <button class="arrow left" onclick="prevSlide()">
+            ❮
+        </button>
+
+        <!-- CONTENIDO -->
+
+        <div class="hero-content">
+
+            <h1 id="titulo">
+                PROMOCIONES ESPECIALES
+            </h1>
+
+            <p id="subtitulo">
+                Hasta 50% de descuento
+            </p>
+
+
+        </div>
+
+        <!-- FLECHA DERECHA -->
+
+        <button class="arrow right" onclick="nextSlide()">
+            ❯
+        </button>
+
+        <!-- INDICADORES -->
+
+        <div class="dots">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================= -->
+    <!-- JAVASCRIPT DEL SLIDER -->
+    <!-- ======================================= -->
+
+    <script>
+
+        const slides = [
+
+
+            {
+                titulo: "PROMOCIONES ESPECIALES",
+                subtitulo: "Hasta 50% de descuento"
+            },
+
+            {
+                titulo: "PERSONALIZA TU PRODUCTO",
+                subtitulo: "Diseña algo único"
+            }
+
+        ];
+
+        let current = 0;
+
+        const titulo = document.getElementById("titulo");
+        const subtitulo = document.getElementById("subtitulo");
+        const dots = document.querySelectorAll(".dot");
+
+        function actualizarSlide(){
+
+            titulo.textContent = slides[current].titulo;
+            subtitulo.textContent = slides[current].subtitulo;
+
+            dots.forEach(dot=>{
+                dot.classList.remove("active");
+            });
+
+            dots[current].classList.add("active");
+        }
+
+        function nextSlide(){
+
+            current++;
+
+            if(current >= slides.length){
+                current = 0;
+            }
+
+            actualizarSlide();
+        }
+
+        function prevSlide(){
+
+            current--;
+
+            if(current < 0){
+                current = slides.length - 1;
+            }
+
+            actualizarSlide();
+        }
+
+        setInterval(nextSlide,5000);
+
+    </script>
+
+
+
+   
+  <!-- ===================================== -->
+<!-- PROMOCIONES DEL MES -->
+<!-- ===================================== -->
+
+<section class="promociones">
+
+    <div class="titulo-seccion">
+        <div class="linea"></div>
+        <h2>PROMOCIONES DEL MES</h2>
+        <div class="linea"></div>
+    </div>
+
+    <div class="contenedor-productos">
+
+        <div class="card promo">
+
+            <span class="descuento">-30%</span>
+
+            <div class="img-box">
+
+                <img src="imagen/OP Diseño Zoro - Polo OVZ Mujer PORTADA.png"
+                alt="Polo">
+
+                <div class="overlay">
+                    <a href="categoria1.html">
+                        <button type="button" class="btn-hover">Ver Producto</button>
+                    </a>
+                
+                </div>
+
+            </div>
+
+            <h3>Polo Oversize</h3>
+            <p>Diseño moderno y cómodo.</p>
+
+            <div class="precio">
+                <span class="antes">S/99.90</span>
+                <span class="ahora">S/69.99</span>
+            </div>
+
+        </div>
+
+        <div class="card promo">
+
+            <span class="descuento">-30%</span>
+
+            <div class="img-box">
+
+                <img src="imagen/ONE PIECE Diseño Luffy - Polera Mujer PORTADA.png"
+                alt="Polera">
+
+                <div class="overlay">
+                    <a href="categoria2.html">
+                        <button class="btn-hover">Ver Producto</button>
+                    </a>
+                    
+                </div>
+
+            </div>
+
+            <h3>Polera One Pice</h3>
+            <p>Ideal para cualquier ocasión.</p>
+
+            <div class="precio">
+                <span class="antes">S/ 149.90</span>
+                <span class="ahora">S/ 104.90</span>
+            </div>
+
+        </div>
+
+        <div class="card promo">
+
+            <span class="descuento">-30%</span>
+
+            <div class="img-box">
+
+                <img src="imagen/defrente naruto.png"
+                alt="Polo">
+
+                <div class="overlay">
+                    <a href="categoria3.html">
+                        <button class="btn-hover">Ver Producto</button>
+                    </a>
+                    
+                </div>
+
+            </div>
+
+            <h3>Polo Premium</h3>
+            <p>Algodón de alta calidad.</p>
+
+            <div class="precio">
+                <span class="antes">S/ 99.90</span>
+                <span class="ahora">S/ 69.99</span>
+            </div>
+
+        </div>
+
+        <div class="card promo">
+
+            <span class="descuento">-20%</span>
+
+            <div class="img-box">
+
+                <img src="imagen/hombre que araña delante.png"
+                alt="Polera">
+
+                <div class="overlay">
+                    <a href="categoria4.html">
+                        <button class="btn-hover">Ver Producto</button>
+                    </a>
+                    
+                </div>
+
+            </div>
+
+            <h3>Polos de pareja</h3>
+            <p>Estilo juvenil y moderno.</p>
+
+            <div class="precio">
+                <span class="antes">S/ 199.90</span>
+                <span class="ahora">S/ 159.90</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- ===================================== -->
+<!-- BEST SELLERS -->
+<!-- ===================================== -->
+
+<section class="best-sellers">
+
+    <div class="titulo-seccion">
+        <div class="linea"></div>
+        <h2>LO MÁS VENDIDO</h2>
+        <div class="linea"></div>
+    </div>
+
+    <div class="contenedor-productos">
+
+        <div class="card">
+
+            <div class="img-box">
+
+                <img src="imagen/delante majin buu.png"
+                alt="Polo">
+
+                <div class="overlay">
+                    <a href="categoria5.html">
+                         <button class="btn-hover">Ver Producto</button>
+                    </a>
+                    
+                </div>
+
+            </div>
+
+            <h3>Bordado Clásico</h3>
+            <p>Un bordado clásico que destaca por su precisión y calidad.</p>
+            <span class="precio-normal">S/ 79.90</span>
+
+        </div>
+
+        <div class="card">
+
+            <div class="img-box">
+
+                <img src="imagen/vegeta - portada.png"
+                alt="Polera">
+
+                <div class="overlay">
+                    <a href="categoria6.html">
+                         <button class="btn-hover">Ver Producto</button>
+                    </a>
+                
+                </div>
+
+            </div>
+
+            <h3>Polera diseño Vegeta</h3>
+            <p>Comodidad y estilo para cualquier ocasión.</p>
+            <span class="precio-normal">S/ 95.00</span>
+
+        </div>
+
+        <div class="card">
+
+            <div class="img-box">
+
+                <img src="imagen/delante pokemon.png"
+                alt="Polo">
+
+                <div class="overlay">
+                    <a href="categoria7.html">
+                        <button class="btn-hover">Ver Producto</button>
+                    </a>
+                    
+                </div>
+
+            </div>
+
+            <h3>Polera Premium</h3>
+            <p>Máxima comodidad con materiales premium.</p>
+            <span class="precio-normal">S/ 120.00</span>
+
+        </div>
+
+        <div class="card">
+
+            <div class="img-box">
+
+                <img src="imagen/gorra - vista portada.png"
+                alt="Polera">
+
+                <div class="overlay">
+                    <a href="categoria8.html">
+                        <button class="btn-hover">Ver Producto</button>
+                    </a>
+                    
+                </div>
+
+            </div>
+
+            <h3>Gorra diseño Luffy</h3>
+            <p>El complemento ideal para cualquier outfit.</p>
+            <span class="precio-normal">S/ 49.90</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+  
+
+
+
+
+      <!-- PERSONALIZA TU POLO -->
+    <main class="container">
+
+        <!-- LEFT -->
+        <section class="left">
+
+            <span class="tag">
+                ✨ Bordados Premium
+            </span>
+
+            <h1>PERSONALIZA TU POLO</h1>
+
+            <p class="description">
+                Crea polos únicos con bordados personalizados.
+                Tú lo imaginas, nosotros lo hacemos realidad.
+            </p>
+
+            <!-- STEPS -->
+            <div class="steps">
+
+                <!-- STEP -->
+                <div class="step">
+
+                    <div class="icon-box">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="">
+                    </div>
+
+                    <div class="text">
+                        <h3>Elige</h3>
+                        <p>Selecciona el modelo y color.</p>
+                    </div>
+
+                </div>
+
+                <!-- STEP -->
+                <div class="step">
+
+                    <div class="icon-box">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="">
+                    </div>
+
+                    <div class="text">
+                        <h3>Personaliza</h3>
+                        <p>Sube tu logo o escribe tu texto.</p>
+                    </div>
+
+                </div>
+
+                <!-- STEP -->
+                <div class="step">
+
+                    <div class="icon-box">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1827/1827933.png" alt="">
+                    </div>
+
+                    <div class="text">
+                        <h3>Vista previa</h3>
+                        <p>Revisa cómo quedará tu diseño.</p>
+                    </div>
+
+                </div>
+
+                <!-- STEP -->
+                <div class="step">
+
+                    <div class="icon-box">
+                        <img src="https://cdn-icons-png.flaticon.com/512/891/891419.png" alt="">
+                    </div>
+
+                    <div class="text">
+                        <h3>Recibe tu pedido</h3>
+                        <p>Envíos rápidos y seguros a todo el país.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="buttons">
+            <a href="personalizar1.html">
+                <button class="btn-primary">
+                    PERSONALIZAR AHORA
+                </button>
+            </a>
+
+            </div>
+
+        </section>
+
+        <!-- RIGHT -->
+        <section class="right">
+
+            <div class="slider-container">
+
+                <!-- SLIDER -->
+                <div class="slider" id="slider">
+
+                    <img src="imagen/atras 2 majin bu.png" alt="Polo 1">
+
+                    <img src="imagen/OP Diseño Zoro - Polo OVZ Mujer Trasera.png" alt="Polo 2">
+
+                    <img src="imagen/de atras hombre araña.png" alt="Polo 3">
+
+                </div>
+
+                <!-- BOTONES -->
+                <button class="slide-btn prev" onclick="prevBanner()">❮</button>
+
+                <button class="slide-btn next" onclick="nextBanner()">❯</button>
+                <!-- DECORACION -->
+                <div class="circle"></div>
+                <div class="circle small"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const slider = document.getElementById('slider');
+
+        let currentSlide = 0;
+
+        const totalSlides = 3;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextBanner() {
+
+            currentSlide++;
+
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            updateSlider();
+        }
+
+        function prevBanner() {
+
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+
+            updateSlider();
+        }
+
+        // CAMBIO AUTOMATICO
+       setInterval(nextBanner, 4000);
+
+    </script>
+
+
+<!-- PIE DE PÁGINA -->
+<!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- BORDADOS STUDIO -->
+            <div class="footer-column social-column">
+
+                <h2>MOLLY PERSONALIZADOS</h2>
+
+                <p>
+                    Diseños minimalistas y bordados premium
+                    hechos especialmente para ti.
+                </p>
+
+                <!-- REDES -->
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@mollymocienta?_r=1&_t=ZS-98l4dRzYWlI" target="_blank">
+    <i class="fab fa-tiktok"></i>
+</a>
+
+                    <a href="#">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- NAVEGACION -->
+            <div class="footer-column">
+
+                <h3>INTEGRANTES</h3>
+
+                <nav>
+
+                    <ul>
+
+                        <li><a href="#">Sayuri Rodriguez</a></li>
+                        <li><a href="#">Milagros Yapuchura</a></li>
+                        <li><a href="#">Frank Cardenas</a></li>
+                        <li><a href="#">Alexis Rosas</a></li>
+
+                    </ul>
+                    
+                     <img src="imagen/Logo-Zegel-.png" alt="Logo" class="footer-logo">
+
+                </nav>
+
+                
+
+            </div>
+
+
+            <!-- MI CUENTA -->
+            <div class="footer-column">
+
+                <h3>MI CUENTA</h3>
+
+                <ul>
+
+                    <li><a href="#">Iniciar sesión</a></li>
+                    <li><a href="#">Mis pedidos</a></li>
+                    <li><a href="#">Mis direcciones</a></li>
+                    <li><a href="#">Cambios y devoluciones</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- AYUDA -->
+            <div class="footer-column">
+
+                <h3>AYUDA</h3>
+
+                <ul>
+
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Métodos de pago</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Libro de reclamaciones</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- CONTACTO -->
+            <div class="footer-column">
+
+                <h3>CONTACTO</h3>
+
+                <div class="contact-item">
+
+                    <i class="fas fa-phone"></i>
+                    <span>+51 923 701 004</span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <i class="fas fa-envelope"></i>
+                    <span>mollyfas05@gmail.com</span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <i class="fas fa-location-dot"></i>
+                    <span>Lima, Perú</span>
+
+                </div>
+
+                
+                
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="copyright">
+
+            <p>
+                © 2026 MOLLY PERSONALIZADOS. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
