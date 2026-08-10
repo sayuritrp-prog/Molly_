@@ -1,0 +1,1422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --primary:#000000;
+    --secondary:#e60000;
+    --gray:#777777;
+    --shadow:
+    0 15px 35px rgba(0,0,0,.12);
+    --shadow-hover:
+    0 25px 50px rgba(0,0,0,.20);
+    --transition:
+    .4s ease;
+}
+
+
+/* ======================================= */
+/* BODY */
+/* ======================================= */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    overflow-x:hidden;
+    animation:fadeBody .6s ease;
+}
+
+
+@keyframes fadeBody{
+
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+
+/* ======================================= */
+/* HEADER */
+/* ======================================= */
+
+.header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    z-index:999;
+    animation:slideDown .8s ease;
+}
+
+
+@keyframes slideDown{
+
+    from{
+        transform:translateY(-100%);
+    }
+    to{
+        transform:translateY(0);
+    }
+}
+
+
+/* ======================================= */
+/* LOGO HEADER */
+/* ======================================= */
+
+.logo{
+
+    width:200px;
+    height:50px;
+    display:flex;
+    align-items:center;
+}
+
+
+.logo img{
+
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+
+/* ======================================= */
+/* MENU HEADER */
+/* ======================================= */
+
+.menu{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    list-style:none;
+    gap:35px;
+    margin-left:80px;
+}
+
+
+.menu li{
+
+    white-space:nowrap;
+}
+
+
+.menu a{
+
+    text-decoration:none;
+    color:#222;
+    font-weight:600;
+    font-size:16px;
+    position:relative;
+    transition:.3s;
+}
+
+
+.menu a::after{
+
+    content:"";
+    position:absolute;
+    width:0;
+    height:3px;
+    background:#000;
+    bottom:-8px;
+    left:0;
+    transition:.3s;
+}
+
+.menu a:hover::after{
+
+    width:100%;
+}
+
+.menu a:hover{
+
+    color:#000;
+}
+
+/* ======================================= */
+/* BOTONES DERECHA */
+/* ======================================= */
+
+.acciones{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+
+.icon-btn{
+
+    border:none;
+    background:#f4f4f4;
+    padding:12px 22px;
+    border-radius:40px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:14px;
+    transition:.35s;
+}
+
+
+.icon-btn:hover{
+
+    background:#000;
+    color:white;
+    transform:translateY(-4px);
+}
+
+/* ======================================= */
+/* RESPONSIVE HEADER */
+/* ======================================= */
+
+
+@media(max-width:900px){
+
+    .header{
+
+        height:auto;
+        padding:20px;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .menu{
+
+        margin-left:0;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .acciones{
+
+        justify-content:center;
+    }
+}
+
+/* ======================================= */
+/* HERO */
+/* ======================================= */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+BANNER
+==================================================*/
+
+.banner{
+
+    position:relative;
+    width:100%;
+    height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+}
+
+.banner img{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+.banner .overlay{
+
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+
+}
+
+.banner-content{
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+    color:white;
+
+    width:90%;
+    max-width:800px;
+
+}
+
+.banner-content h1{
+
+    font-size:4rem;
+    font-weight:700;
+    margin-bottom:20px;
+
+}
+
+.banner-content p{
+
+    font-size:18px;
+    line-height:1.8;
+
+}
+
+/*==================================================
+NOSOTROS
+==================================================*/
+
+.nosotros{
+
+    width:100%;
+    padding:90px 8%;
+
+}
+
+.titulo{
+
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+
+}
+
+.titulo span{
+
+    color:var(--accent);
+    font-weight:1000;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size: 40px;
+}
+
+.titulo h2{
+
+    font-size:35px;
+    margin:20px 0;
+
+}
+
+.titulo p{
+
+    color:var(--gray);
+    line-height:1.9;
+    font-size:17px;
+
+}
+
+/*==================================================
+MISIÓN Y VISIÓN
+==================================================*/
+
+.mision-vision{
+
+    width:100%;
+
+    padding:30px 8% 100px;
+
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+
+}
+
+.card-info{
+
+    flex:1;
+    min-width:320px;
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.card-info:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card-info i{
+
+    font-size:45px;
+
+    color:var(--accent);
+
+    margin-bottom:25px;
+
+}
+
+.card-info h2{
+
+    margin-bottom:20px;
+
+    font-size:30px;
+
+}
+
+.card-info p{
+
+    line-height:1.8;
+
+    color:var(--gray);
+
+}
+
+
+/*==================================================
+EQUIPO
+==================================================*/
+
+.equipo{
+
+    padding:100px 8%;
+    background:#fafafa;
+
+}
+
+.contenedor-equipo{
+
+    margin-top:60px;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:120px;
+}
+
+.miembro{
+
+    width:280px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.4s;
+
+}
+
+.miembro:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.foto{
+
+    width:100%;
+    height:320px;
+    overflow:hidden;
+
+}
+
+.foto img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+
+}
+
+.miembro:hover .foto img{
+
+    transform:scale(1.08);
+
+}
+
+.miembro h3{
+
+    margin-top:25px;
+    font-size:23px;
+    color:#111;
+
+}
+
+.miembro span{
+
+    display:block;
+    margin:10px 0;
+    color:#c89b3c;
+    font-weight:600;
+
+}
+
+.miembro p{
+
+    padding:0 25px;
+    color:#666;
+    line-height:1.7;
+    margin-bottom:25px;
+
+}
+
+.miembro{
+
+    width:280px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.4s;
+    padding-bottom:30px;
+
+}
+
+
+.redes{
+    visibility: hidden;
+}
+
+
+/*==================================================
+FILOSOFÍA
+==================================================*/
+
+.filosofia{
+    position:relative;
+    background:#ffffff;
+    padding:100px 8%;
+}
+
+.filosofia .overlay{
+    display:none;
+}
+
+.filosofia .overlay{
+
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.60);
+
+}
+
+.contenido-filosofia{
+    position:relative;
+    z-index:2;
+    width:100%;
+    color:#222;
+}
+
+
+.contenido-filosofia h2{
+
+    font-size:50px;
+    margin:20px 0;
+    color: #c89b3c;
+
+}
+
+.contenido-filosofia p{
+
+    line-height:1.9;
+    margin-bottom:20px;
+
+}
+
+.btn-contacto{
+
+    display:inline-block;
+    margin-top:20px;
+    padding:16px 38px;
+    background:#000000;
+    color:#ffffff;
+    border-radius:40px;
+    font-weight:600;
+    transition:.4s;
+
+}
+
+.btn-contacto:hover{
+
+    background:#111;
+    color:#fff;
+
+}
+
+/*=========================================
+VIDEO FILOSOFÍA
+=========================================*/
+
+.contenido-filosofia{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+
+}
+
+.filosofia-texto{
+
+    flex:1;
+
+}
+
+.filosofia-video{
+
+    flex:1;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+
+    margin-left:120px;
+
+}
+
+.filosofia-video video{
+
+    width:550px;
+    height:auto;
+    border-radius:20px;
+    object-fit:cover;
+
+}
+
+@media(max-width:768px){
+
+    .contenido-filosofia{
+
+        flex-direction:column;
+
+    }
+
+    .filosofia-video{
+
+        width:100%;
+
+    }
+
+}
+
+/* FOOTER */
+
+.footer{
+    background: #000;
+    color: #fff;
+    padding-top: 50px;
+    margin-top: 0px;
+}
+
+.footer-container{
+    width: 90%;
+    min-height: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-column{
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-column h3{
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    position: relative;
+}
+
+.footer-column h3::after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #fcfcfc;
+    margin-top: 8px;
+    border-radius: 20px;
+}
+
+/* LOGO */
+
+.logo img{
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+.footer-column p{
+    color: #bdbdbd;
+    line-height: 1.7;
+}
+
+/* MENÚS */
+
+.footer-column ul{
+    list-style: none;
+}
+
+.footer-column ul li{
+    margin: 12px 0;
+}
+
+.footer-column ul li a{
+    text-decoration: none;
+    color: #bdbdbd;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+/* EFECTOS BOTONES */
+
+.footer-column ul li a:hover{
+    color: #ffffff;
+    transform: translateX(8px);
+}
+
+/* REDES */
+
+.social-icons{
+    color: white;
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-icons a{
+    width: 45px;
+    height: 45px;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.social-icons a:hover{
+    background: #e0e0e0;
+    color: #000;
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 0 15px rgba(209, 209, 209, 0.6);
+}
+
+
+/* CONTACTO */
+
+.contact-item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #bdbdbd;
+    transition: .3s;
+}
+
+.contact-item i{
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.contact-item:hover{
+    transform: translateX(8px);
+    color: #fff;
+}
+
+
+.contact-btn{
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+/* COPYRIGHT */
+
+.copyright{
+    border-top: 1px solid #222;
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.copyright p{
+    color: #bdbdbd;
+    font-size: 14px;
+}
+/* RESPONSIVE */
+
+@media(max-width: 992px){
+
+    .footer-container{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-column{
+        width: 100%;
+    }
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+    .header{
+
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+
+    }
+
+    .menu{
+
+        margin-top:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:25px;
+
+    }
+
+    .banner-content h1{
+
+        font-size:3rem;
+
+    }
+
+    .mision-vision{
+
+        flex-direction:column;
+
+    }
+
+    .card-info{
+
+        width:100%;
+
+    }
+
+    .footer-container{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .banner{
+
+        height:55vh;
+
+    }
+
+    .banner-content h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .titulo h2{
+
+        font-size:32px;
+
+    }
+
+    .contenido-filosofia h2{
+
+        font-size:34px;
+
+    }
+
+    .contenedor-equipo{
+
+        gap:25px;
+
+    }
+
+    .miembro{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .banner-content h1{
+
+        font-size:2rem;
+
+    }
+
+    .banner-content p{
+
+        font-size:15px;
+
+    }
+
+    .titulo h2{
+
+        font-size:28px;
+
+    }
+
+    .contenido-filosofia h2{
+
+        font-size:28px;
+
+    }
+
+}
+
+
+/*==================================================
+RESPONSIVE - CELULAR
+==================================================*/
+
+@media (max-width: 768px){
+
+    /*=========================================
+    HEADER
+    =========================================*/
+
+    .header{
+        position:relative;
+        width:100%;
+        height:auto;
+        min-height:170px;
+        padding:15px 15px 18px;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+        gap:14px;
+    }
+
+    /* LOGO */
+
+    .logo{
+        width:180px;
+        height:45px;
+        justify-content:center;
+    }
+
+    .logo img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+
+
+    /* MENU */
+
+    .menu{
+        width:100%;
+        margin:0;
+        padding:0;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        gap:20px;
+        flex-wrap:nowrap;
+    }
+
+    .menu li{
+        white-space:nowrap;
+    }
+
+    .menu a{
+        font-size:15px;
+    }
+
+    .menu a::after{
+        height:2px;
+        bottom:-5px;
+    }
+
+
+    /* BOTONES */
+
+    .acciones{
+        width:100%;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        gap:10px;
+    }
+
+    .icon-btn{
+        padding:10px 16px;
+        font-size:13px;
+        white-space:nowrap;
+    }
+
+
+    /*=========================================
+    BANNER
+    =========================================*/
+
+    .banner{
+        width:100%;
+        height:55vh;
+        min-height:360px;
+
+        margin-top:0;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        overflow:hidden;
+    }
+
+    .banner img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        object-position:center;
+    }
+
+    .banner .overlay{
+        background:rgba(0,0,0,.45);
+    }
+
+    .banner-content{
+        width:90%;
+        max-width:500px;
+
+        padding:20px;
+
+        text-align:center;
+    }
+
+    .banner-content h1{
+        font-size:2rem;
+        line-height:1.2;
+
+        margin-bottom:15px;
+
+        word-break:normal;
+        overflow-wrap:break-word;
+    }
+
+    .banner-content p{
+        font-size:15px;
+        line-height:1.7;
+
+        margin:0 auto;
+    }
+
+
+    /*=========================================
+    NOSOTROS
+    =========================================*/
+
+    .nosotros{
+        width:100%;
+        padding:60px 20px;
+    }
+
+    .titulo{
+        width:100%;
+    }
+
+    .titulo span{
+        font-size:24px;
+        letter-spacing:1px;
+    }
+
+    .titulo h2{
+        font-size:28px;
+        line-height:1.3;
+        margin:15px 0;
+    }
+
+    .titulo p{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+
+    /*=========================================
+    MISIÓN Y VISIÓN
+    =========================================*/
+
+    .mision-vision{
+        width:100%;
+        padding:20px 20px 70px;
+
+        display:flex;
+        flex-direction:column;
+
+        gap:25px;
+    }
+
+    .card-info{
+        width:100%;
+        min-width:0;
+
+        padding:30px 22px;
+    }
+
+    .card-info h2{
+        font-size:25px;
+    }
+
+    .card-info p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+
+    /*=========================================
+    EQUIPO
+    =========================================*/
+
+    .equipo{
+        padding:70px 20px;
+    }
+
+    .contenedor-equipo{
+        width:100%;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        gap:25px;
+    }
+
+    .miembro{
+        width:100%;
+        max-width:350px;
+    }
+
+    .foto{
+        height:320px;
+    }
+
+
+    /*=========================================
+    FILOSOFÍA
+    =========================================*/
+
+    .filosofia{
+        width:100%;
+        padding:70px 20px;
+        overflow:hidden;
+    }
+
+    .contenido-filosofia{
+        width:100%;
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:center;
+        justify-content:center;
+
+        gap:35px;
+    }
+
+    .filosofia-texto{
+        width:100%;
+        flex:none;
+
+        text-align:left;
+    }
+
+    .contenido-filosofia h2{
+        font-size:30px;
+        line-height:1.2;
+
+        margin:0 0 20px;
+    }
+
+    .contenido-filosofia p{
+        font-size:15px;
+        line-height:1.8;
+        margin-bottom:18px;
+    }
+
+    .btn-contacto{
+        padding:14px 30px;
+        margin-top:10px;
+    }
+
+
+    /* VIDEO */
+
+    .filosofia-video{
+        width:100%;
+        margin-left:0;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .filosofia-video video{
+        width:100%;
+        max-width:550px;
+        height:auto;
+
+        border-radius:18px;
+        object-fit:cover;
+    }
+
+
+    /*=========================================
+    FOOTER
+    =========================================*/
+
+    .footer{
+        padding-top:45px;
+    }
+
+    .footer-container{
+        width:90%;
+
+        display:flex;
+        flex-direction:column;
+
+        gap:35px;
+    }
+
+    .footer-column{
+        width:100%;
+        min-width:0;
+    }
+
+    .footer-column h3{
+        font-size:1.1rem;
+    }
+
+    .footer-column p{
+        font-size:14px;
+    }
+
+    .footer-column ul li{
+        margin:10px 0;
+    }
+
+    .footer-column ul li a{
+        font-size:14px;
+    }
+
+    .social-icons{
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    .social-icons a{
+        width:42px;
+        height:42px;
+    }
+
+    .contact-item{
+        font-size:14px;
+        align-items:flex-start;
+    }
+
+    .copyright{
+        margin-top:30px;
+        padding:18px 15px;
+    }
+
+    .copyright p{
+        font-size:12px;
+        line-height:1.6;
+    }
+}
+
+
+/*==================================================
+CELULARES PEQUEÑOS
+==================================================*/
+
+@media (max-width:480px){
+
+    .header{
+        min-height:165px;
+        padding:14px 12px 16px;
+        gap:12px;
+    }
+
+    .logo{
+        width:165px;
+        height:42px;
+    }
+
+    .menu{
+        gap:15px;
+    }
+
+    .menu a{
+        font-size:14px;
+    }
+
+    .acciones{
+        gap:8px;
+    }
+
+    .icon-btn{
+        padding:9px 13px;
+        font-size:12px;
+    }
+
+
+    /* BANNER */
+
+    .banner{
+        height:55vh;
+        min-height:330px;
+    }
+
+    .banner-content{
+        width:94%;
+        padding:10px;
+    }
+
+    .banner-content h1{
+        font-size:1.8rem;
+        line-height:1.2;
+
+        margin-bottom:14px;
+    }
+
+    .banner-content p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+
+    /* NOSOTROS */
+
+    .nosotros{
+        padding:50px 18px;
+    }
+
+    .titulo span{
+        font-size:21px;
+    }
+
+    .titulo h2{
+        font-size:25px;
+    }
+
+    .titulo p{
+        font-size:14px;
+    }
+
+
+    /* CARDS */
+
+    .mision-vision{
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+    .card-info{
+        padding:28px 20px;
+    }
+
+
+    /* FILOSOFÍA */
+
+    .filosofia{
+        padding:60px 18px;
+    }
+
+    .contenido-filosofia h2{
+        font-size:27px;
+    }
+
+    .contenido-filosofia p{
+        font-size:14px;
+    }
+
+    .filosofia-video video{
+        width:100%;
+        border-radius:15px;
+    }
+
+
+    /* EQUIPO */
+
+    .equipo{
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+    .miembro{
+        max-width:100%;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container{
+        width:90%;
+    }
+}
