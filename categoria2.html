@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCTOS</title>
+
+    <link rel="stylesheet" href="css/categoria2.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ======================================= -->
+<!-- CABECERA -->
+<!-- ======================================= -->
+
+<header class="header">
+
+    <div class="logo-container">
+
+        <img src="imagen/molly 2.1.png" alt="Logo" class="logo">
+
+    </div>
+
+    <nav class="nav">
+
+    <ul class="menu">
+
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="personalizar1.html">Personaliza</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+
+    </ul>
+
+</nav>
+
+    <div class="acciones">
+
+        <button class="icon-btn" id="carritoBtn">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            Carrito (<span id="contador">0</span>)
+
+        </button>
+
+        <button class="icon-btn">
+
+            <i class="fa-regular fa-user"></i>
+
+            Iniciar Sesión
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ======================================= -->
+<!-- PRODUCTO -->
+<!-- ======================================= -->
+
+<section class="product-container">
+
+    <div class="gallery">
+
+        <div class="badge">
+            NEW
+        </div>
+
+        <img
+        id="mainImage"
+        class="main-image"
+        src="imagen/ONE PIECE Diseño Luffy - Polera Mujer Frontal.png"
+        alt="modelo">
+
+        <div class="thumbs">
+
+            <img onclick="changeImage(this)"
+            src="imagen/ONE PIECE Diseño Luffy - Polera Mujer Frontal.png">
+
+            <img onclick="changeImage(this)"
+            src="imagen/ONE PIECE Diseño Luffy - Polera Mujer Trasera.png">
+
+            <img onclick="changeImage(this)"
+            src="imagen/ONE PIECE Diseño Luffy - Polera Mujer Frontal DETALLE.png">
+
+        </div>
+
+    </div>
+
+    <div class="details">
+
+        <h1>Polera One Pice</h1>
+
+        <div class="price">
+            S/ 104.90
+        </div>
+
+        <p>
+            Diseño elegante con caída suave y bordados premium.
+            Ideal para looks casuales y sofisticados.
+        </p>
+
+        <h3>Color</h3>
+
+        <div class="colors">
+
+            <div class="color black active"></div>
+
+            <div class="color beige"></div>
+
+            <div class="color wine"></div>
+
+        </div>
+
+        <h3>Talla</h3>
+
+        <div class="sizes">
+
+            <button>XS</button>
+
+            <button>S</button>
+
+            <button class="active-size">M</button>
+
+            <button>L</button>
+
+            <button>XL</button>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+            class="cart-btn"
+            data-nombre="Polo Oversize diseño Lufy"
+            data-precio="104.90"
+            data-imagen="imagen/ONE PIECE Diseño Luffy - Polera Mujer Frontal.png">
+
+                Añadir al carrito
+
+            </button>
+
+            <button class="fav-btn">
+
+                ♡
+
+            </button>
+
+        </div>
+
+        <div class="benefits">
+
+            <div class="box">
+
+                🚚 Envío rápido
+
+            </div>
+
+            <div class="box">
+
+                🔒 Pago seguro
+
+            </div>
+
+            <div class="box">
+
+                ↩ Devoluciones fáciles
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================= -->
+<!-- PRODUCTOS RELACIONADOS -->
+<!-- ======================================= -->
+
+<section class="related">
+
+    <h2>También te puede gustar</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <img src="imagen/polera luffy marron.png" alt="Vestido">
+
+            <h4>Polera Luffy</h4>
+
+            <span>S/ 99.99</span>
+
+            <button
+            class="cart-btn"
+            data-nombre="Polera Luffy"
+            data-precio="99.99"
+            data-imagen="imagen/polera luffy marron.png">
+
+                Añadir al carrito
+
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <img src="imagen/polera plomo kimetsu.png" alt="Blusa">
+
+            <h4>Polera Demon Slayer</h4>
+
+            <span>S/ 79.90</span>
+
+            <button
+            class="cart-btn"
+            data-nombre="Polera Demon Slayer"
+            data-precio="79.90"
+            data-imagen="imagen/polera plomo kimetsu.png">
+
+                Añadir al carrito
+
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <img src="imagen/polo negro titan.png" alt="Top">
+
+            <h4>Polo Attack on Titan</h4>
+
+            <span>S/ 69.99</span>
+
+            <button
+            class="cart-btn"
+            data-nombre="Polo Attack on Titan"
+            data-precio="69.90"
+            data-imagen="imagen/polo negro titan.png">
+
+                Añadir al carrito
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================================
+CARRITO LATERAL
+==========================================-->
+
+<div id="panelCarrito" class="panel-carrito">
+
+    <div class="panel-header">
+
+        <h2>
+            <i class="fa-solid fa-cart-shopping"></i>
+            Mi carrito
+        </h2>
+
+        <button id="cerrarCarrito">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+    <!-- Productos -->
+
+    <div id="listaCarrito">
+
+        <p class="vacio">
+            Tu carrito está vacío.
+        </p>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="footer-carrito">
+
+        <div class="total">
+
+            <span>Total:</span>
+
+            <strong id="totalCompra">
+                S/ 
+            </strong>
+
+        </div>
+
+        <div class="botones-carrito">
+
+            <button id="vaciarCarrito" class="vaciar">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Vaciar
+
+            </button>
+
+            <a href="compras2.html">
+<button id="comprar" class="comprar">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Ver Carrito
+
+            </button>
+
+            </a>
+            
+        </div>
+
+    </div>
+
+</div>
+
+<div id="overlayCarrito" class="overlay-carrito"></div>
+
+
+<!-- ===========================
+        FOOTER
+=========================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- BORDADOS STUDIO -->
+        <div class="footer-column social-column">
+
+            <h2>MOLLY PERSONALIZADOS</h2>
+
+            <p>
+                Diseños minimalistas y bordados premium
+                hechos especialmente para ti.
+            </p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- INTEGRANTES -->
+        <div class="footer-column">
+
+            <h3>INTEGRANTES</h3>
+
+            <ul>
+
+                <li><a href="#">Sayuri Rodriguez</a></li>
+                <li><a href="#">Milagros Yapuchura</a></li>
+                <li><a href="#">Frank Cardenas</a></li>
+                <li><a href="#">Alexis Rosas</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- MI CUENTA -->
+        <div class="footer-column">
+
+            <h3>MI CUENTA</h3>
+
+            <ul>
+
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Mis pedidos</a></li>
+                <li><a href="#">Mis direcciones</a></li>
+                <li><a href="#">Cambios y devoluciones</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- AYUDA -->
+        <div class="footer-column">
+
+            <h3>AYUDA</h3>
+
+            <ul>
+
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Métodos de pago</a></li>
+                <li><a href="#">Envíos</a></li>
+                <li><a href="#">Libro de reclamaciones</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="footer-column">
+
+            <h3>CONTACTO</h3>
+
+            <div class="contact-item">
+
+                <i class="fas fa-phone"></i>
+                <span>+51 923 701 004</span>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fas fa-envelope"></i>
+                <span>mollyfas05@gmail.com</span>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fas fa-location-dot"></i>
+                <span>Lima, Perú</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 MOLLY PERSONALIZADOS. Todos los derechos reservados.
+        </p>
+
+    </div>
+
+</footer>
+
+<script>
+
+
+/*=========================================
+CAMBIAR IMAGEN PRINCIPAL
+=========================================*/
+
+function changeImage(img){
+
+    document.getElementById("mainImage").src = img.src;
+
+}
+
+
+/*=========================================
+ANIMACIÓN HACIA EL CARRITO
+=========================================*/
+
+function animarAlCarrito(){
+
+    const imagen = document.getElementById("mainImage");
+    const carrito = document.getElementById("carritoBtn");
+
+    const copia = imagen.cloneNode(true);
+
+    const inicio = imagen.getBoundingClientRect();
+    const destino = carrito.getBoundingClientRect();
+
+    copia.style.position="fixed";
+    copia.style.left=inicio.left+"px";
+    copia.style.top=inicio.top+"px";
+    copia.style.width=inicio.width+"px";
+    copia.style.height=inicio.height+"px";
+    copia.style.objectFit="cover";
+    copia.style.borderRadius="15px";
+    copia.style.zIndex="99999";
+    copia.style.pointerEvents="none";
+    copia.style.transition="all .8s ease";
+
+    document.body.appendChild(copia);
+
+    requestAnimationFrame(()=>{
+
+        copia.style.left=destino.left+"px";
+        copia.style.top=destino.top+"px";
+        copia.style.width="35px";
+        copia.style.height="35px";
+        copia.style.opacity=".2";
+        copia.style.transform="scale(.2)";
+
+    });
+
+    copia.addEventListener("transitionend",()=>{
+
+        copia.remove();
+
+        carrito.classList.add("rebote");
+
+        setTimeout(()=>{
+
+            carrito.classList.remove("rebote");
+
+        },500);
+
+    });
+
+}
+
+/*=========================================
+CARRITO
+=========================================*/
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+const contador = document.getElementById("contador");
+const listaCarrito = document.getElementById("listaCarrito");
+const panelCarrito = document.getElementById("panelCarrito");
+
+
+
+actualizarCarrito();
+
+
+document.querySelectorAll(".cart-btn").forEach(boton=>{
+
+    boton.addEventListener("click",()=>{
+
+        const tarjeta = boton.closest(".details") || boton.closest(".card");
+
+        const nombre = boton.dataset.nombre;
+        const precio = boton.dataset.precio;
+        const imagen = document.getElementById("mainImage").src;
+
+        let talla = "M";
+
+        if(tarjeta){
+
+            const activa = tarjeta.querySelector(".sizes .active-size");
+
+            if(activa){
+
+                talla = activa.textContent;
+
+            }
+
+        }
+
+        const existe = carrito.find(p =>
+    p.nombre === nombre &&
+    p.talla === talla
+);
+
+if(existe){
+
+    existe.cantidad++;
+
+}else{
+
+    carrito.push({
+
+        nombre,
+        precio: Number(precio),
+        imagen,
+        talla,
+        cantidad:1
+
+    });
+
+}
+
+     localStorage.setItem("carrito", JSON.stringify(carrito));
+
+        animarAlCarrito();
+
+        actualizarCarrito();
+
+        setTimeout(() => {
+
+            abrirCarrito();
+
+        }, 700);
+
+    });
+
+});
+
+function actualizarCarrito(){
+
+    contador.textContent = carrito.reduce((t,p)=>t+p.cantidad,0);
+
+    listaCarrito.innerHTML="";
+
+    let total=0;
+
+    carrito.forEach((producto,index)=>{
+
+        total += producto.precio * producto.cantidad;
+
+        listaCarrito.innerHTML += `
+
+        <div class="item-carrito">
+
+            <img src="${producto.imagen}">
+
+            <div style="flex:1;">
+
+                <h4>${producto.nombre}</h4>
+
+                <p>Talla: ${producto.talla}</p>
+
+                <span>S/ ${(producto.precio*producto.cantidad).toFixed(2)}</span>
+
+                <div class="cantidad">
+
+                    <button onclick="disminuir(${index})">-</button>
+
+                    <span>${producto.cantidad}</span>
+
+                    <button onclick="aumentar(${index})">+</button>
+
+                </div>
+
+            </div>
+
+            <button class="eliminar" onclick="eliminarProducto(${index})">
+
+                🗑
+
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+    document.getElementById("totalCompra").textContent =
+    "S/ " + total.toFixed(2);
+
+}
+function aumentar(index){
+
+    carrito[index].cantidad++;
+
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+
+    actualizarCarrito();
+
+}
+
+function disminuir(index){
+
+    carrito[index].cantidad--;
+
+    if(carrito[index].cantidad<=0){
+
+        carrito.splice(index,1);
+
+    }
+console.log(carrito);
+
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+
+    actualizarCarrito();
+
+}
+
+
+document.getElementById("vaciarCarrito").addEventListener("click",()=>{
+
+    carrito=[];
+
+    localStorage.removeItem("carrito");
+
+    actualizarCarrito();
+
+});
+
+
+document.getElementById("comprar").addEventListener("click",()=>{
+
+    if(carrito.length==0){
+
+        alert("El carrito está vacío.");
+
+        return;
+
+    }
+
+});
+
+
+
+function abrirCarrito(){
+
+    panelCarrito.classList.add("activo");
+
+    overlayCarrito.classList.add("activo");
+
+}
+
+
+function cerrarPanel(){
+
+    panelCarrito.classList.remove("activo");
+
+    overlayCarrito.classList.remove("activo");
+
+}
+
+
+carritoBtn.addEventListener("click",abrirCarrito);
+
+cerrarCarrito.addEventListener("click",cerrarPanel);
+
+overlayCarrito.addEventListener("click",cerrarPanel);
+
+
+
+/*=========================================
+TALLAS
+=========================================*/
+
+document.querySelectorAll(".sizes").forEach(grupo=>{
+
+    grupo.querySelectorAll("button").forEach(btn=>{
+
+        btn.addEventListener("click",()=>{
+
+            grupo.querySelectorAll("button").forEach(b=>{
+
+                b.classList.remove("active-size");
+
+            });
+
+            btn.classList.add("active-size");
+
+        });
+
+    });
+
+});
+
+
+/*=========================================
+COLORES
+=========================================*/
+
+document.querySelectorAll(".colors").forEach(grupo=>{
+
+    grupo.querySelectorAll(".color").forEach(color=>{
+
+        color.addEventListener("click",()=>{
+
+            grupo.querySelectorAll(".color").forEach(c=>{
+
+                c.classList.remove("active");
+
+            });
+
+            color.classList.add("active");
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
