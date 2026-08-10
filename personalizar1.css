@@ -1,0 +1,1840 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --primary:#000000;
+    --secondary:#e60000;
+    --gray:#777777;
+    --shadow:
+    0 15px 35px rgba(0,0,0,.12);
+    --shadow-hover:
+    0 25px 50px rgba(0,0,0,.20);
+    --transition:
+    .4s ease;
+}
+
+
+/* ======================================= */
+/* BODY */
+/* ======================================= */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    overflow-x:hidden;
+    animation:fadeBody .6s ease;
+}
+
+
+@keyframes fadeBody{
+
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+
+/* ======================================= */
+/* HEADER */
+/* ======================================= */
+
+.header{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    z-index:999;
+    animation:slideDown .8s ease;
+}
+
+
+@keyframes slideDown{
+
+    from{
+        transform:translateY(-100%);
+    }
+    to{
+        transform:translateY(0);
+    }
+}
+
+
+/* ======================================= */
+/* LOGO HEADER */
+/* ======================================= */
+
+.logo{
+
+    width:200px;
+    height:50px;
+    display:flex;
+    align-items:center;
+}
+
+
+.logo img{
+
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+
+/* ======================================= */
+/* MENU HEADER */
+/* ======================================= */
+
+.menu{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    list-style:none;
+    gap:35px;
+    margin-left:80px;
+}
+
+
+.menu li{
+
+    white-space:nowrap;
+}
+
+
+.menu a{
+
+    text-decoration:none;
+    color:#222;
+    font-weight:600;
+    font-size:16px;
+    position:relative;
+    transition:.3s;
+}
+
+
+.menu a::after{
+
+    content:"";
+    position:absolute;
+    width:0;
+    height:3px;
+    background:#000;
+    bottom:-8px;
+    left:0;
+    transition:.3s;
+}
+
+.menu a:hover::after{
+
+    width:100%;
+}
+
+.menu a:hover{
+
+    color:#000;
+}
+
+/* ======================================= */
+/* BOTONES DERECHA */
+/* ======================================= */
+
+.acciones{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+
+.icon-btn{
+
+    border:none;
+    background:#f4f4f4;
+    padding:12px 22px;
+    border-radius:40px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:14px;
+    transition:.35s;
+}
+
+
+.icon-btn:hover{
+
+    background:#000;
+    color:white;
+    transform:translateY(-4px);
+}
+
+/* ======================================= */
+/* RESPONSIVE HEADER */
+/* ======================================= */
+
+
+@media(max-width:900px){
+
+    .header{
+
+        height:auto;
+        padding:20px;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .menu{
+
+        margin-left:0;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .acciones{
+
+        justify-content:center;
+    }
+}
+
+/* ======================================= */
+/* HERO */
+/* ======================================= */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+/* ======================================= */
+/* VIDEO */
+/* ======================================= */
+
+.video-bg{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.40);
+
+}
+
+/* ======================================= */
+/* CONTENIDO */
+/* ======================================= */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.hero-content h1{
+
+    font-size:4rem;
+
+}
+
+.hero-content p{
+
+    font-size:1.2rem;
+
+}
+
+/* ======================================= */
+/* CTA */
+/* ======================================= */
+
+.cta-btn{
+
+    border:none;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #000000,
+        #000000
+    );
+
+    transition:.4s;
+
+}
+
+.cta-btn:hover{
+
+    transform:translateY(-8px) scale(1.05);
+
+    box-shadow:0 15px 30px rgba(255, 255, 255, 0.842);
+
+}
+
+.cta-btn:active{
+
+    transform:scale(.95);
+
+}
+
+/* ======================================= */
+/* FLECHAS */
+/* ======================================= */
+
+.arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:28px;
+
+    background:rgba(255,255,255,.20);
+
+    backdrop-filter:blur(8px);
+
+    z-index:2;
+
+    transition:.4s;
+
+}
+
+.arrow:hover{
+
+    background:#000000;
+
+    transform:translateY(-50%) scale(1.1);
+
+}
+
+.left{
+
+    left:40px;
+
+}
+
+.right{
+
+    right:40px;
+
+}
+
+/* ======================================= */
+/* DOTS */
+/* ======================================= */
+
+.dots{
+
+    position:absolute;
+
+    bottom:40px;
+
+    display:flex;
+
+    gap:15px;
+
+    z-index:2;
+
+}
+
+.dot{
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.5;
+
+}
+
+.dot.active{
+
+    opacity:1;
+
+    background:#000000;
+
+    transform:scale(1.3);
+
+}
+
+/* ======================================= */
+/* RESPONSIVE */
+/* ======================================= */
+
+@media(max-width:900px){
+
+    .header{
+
+        flex-direction:column;
+        gap:20px;
+
+    }
+
+    .menu{
+
+        flex-wrap:wrap;
+        justify-content:center;
+
+    }
+
+    .acciones{
+
+        flex-wrap:wrap;
+        justify-content:center;
+
+    }
+
+    .hero-content h1{
+
+        font-size:2.5rem;
+
+    }
+
+}
+
+
+/*====================================================
+PERSONALIZADOR
+====================================================*/
+
+.container{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    gap:45px;
+
+    padding:130px 6% 60px;
+
+    background:linear-gradient(
+        135deg,
+        #f6f7fb,
+        #eef2ff
+    );
+
+}
+
+
+/*====================================================
+PANEL IZQUIERDO
+====================================================*/
+
+.left{
+
+    flex:1.3;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+/*====================================================
+VISOR
+====================================================*/
+
+.viewer{
+
+    width:100%;
+    max-width:720px;
+
+    background:white;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.12);
+
+    padding:30px;
+
+    transition:.45s;
+
+}
+
+.viewer:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 35px 70px rgba(0,0,0,.18);
+
+}
+
+
+/*====================================================
+BOTÓN SUPERIOR
+====================================================*/
+
+.viewer-top{
+
+    display:flex;
+    justify-content:flex-end;
+
+}
+
+
+.rotate{
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:#111;
+
+    color:white;
+
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    transition:.35s;
+
+}
+
+.rotate:hover{
+
+    transform:scale(1.08);
+
+    background:#e60000;
+
+}
+
+
+/*====================================================
+MOCKUP
+====================================================*/
+
+.mockup img{
+
+    width:90%;
+    max-width:470px;
+    transition:.35s ease;
+    cursor:grab;
+    user-select:none;
+
+}
+
+
+/*====================================================
+IMAGEN PRINCIPAL
+====================================================*/
+
+.mockup img{
+
+    width:90%;
+    max-width:470px;
+    transition:.45s;
+}
+
+
+.mockup img:hover{
+
+    transform:scale(1.08) rotate(-2deg);
+
+}
+
+
+/*====================================================
+ANIMACIÓN
+====================================================*/
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/*====================================================
+CONTROLES
+====================================================*/
+
+.viewer-controls{
+
+    margin-top:20px;
+
+    display:flex;
+    justify-content:center;
+    gap:18px;
+
+}
+
+
+.viewer-controls button{
+
+    width:55px;
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#f5f5f5;
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+
+.viewer-controls button:hover{
+
+    background:#000;
+
+    color:white;
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+
+/*====================================================
+EFECTO BRILLO
+====================================================*/
+
+.viewer{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.viewer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-40%;
+
+    width:40%;
+
+    height:250%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+
+.viewer:hover::before{
+
+    left:130%;
+
+}
+
+
+/*====================================================
+RESPONSIVE
+====================================================*/
+
+@media(max-width:1100px){
+
+.container{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.left{
+
+    width:100%;
+
+}
+
+.viewer{
+
+    max-width:100%;
+
+}
+
+.mockup{
+
+    height:500px;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.container{
+
+    padding:120px 20px 40px;
+
+}
+
+.mockup{
+
+    height:420px;
+
+}
+
+.mockup img{
+
+    width:100%;
+    max-width:350px;
+
+}
+
+.viewer-controls{
+
+    flex-wrap:wrap;
+
+}
+
+}
+
+
+/*====================================================
+PANEL DERECHO
+====================================================*/
+
+.right{
+
+    flex:.8;
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+
+/*====================================================
+TARJETAS
+====================================================*/
+
+.upload-card,
+.colors,
+.gallery{
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+
+.upload-card:hover,
+.colors:hover,
+.gallery:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+}
+
+
+/*====================================================
+UPLOAD
+====================================================*/
+
+.upload-card{
+
+    text-align:center;
+
+    border:2px dashed #d8d8d8;
+
+}
+
+.upload-card label{
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.upload-card i{
+
+    font-size:55px;
+
+    color:#000;
+
+}
+
+.upload-card h3{
+
+    font-size:22px;
+
+}
+
+.upload-card p{
+
+    color:#777;
+
+}
+
+.upload-card span{
+
+    color:#999;
+
+    font-size:14px;
+
+}
+
+#upload{
+
+    display:none;
+
+}
+
+
+/*====================================================
+COLORES
+====================================================*/
+
+.colors h3{
+
+    margin-bottom:20px;
+
+}
+
+
+.color-list{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-bottom:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.color{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    border:3px solid transparent;
+
+}
+
+.color:hover{
+
+    transform:scale(1.2);
+
+}
+
+
+.white{
+
+    background:#fff;
+ 
+    border:2px solid #d8d8d8;
+
+}
+
+.black{
+
+    background:#000;
+
+}
+
+.blue{
+
+    background:#6200ff;
+
+}
+
+
+
+.colors a{
+
+    text-decoration:none;
+
+    color:#000;
+
+    font-weight:600;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.colors a:hover{
+
+    color:#e60000;
+
+}
+
+
+/*====================================================
+GALERÍA
+====================================================*/
+
+.gallery-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+
+.gallery-header a{
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    color:#000;
+
+}
+
+
+.gallery-images{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+
+.thumb{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    background:#f6f6f6;
+
+}
+
+
+.thumb img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.35s;
+
+}
+
+
+.thumb:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+
+}
+
+
+.thumb:hover img{
+
+    transform:scale(1.1);
+
+}
+
+
+/*====================================================
+BOTONES
+====================================================*/
+
+.buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+.download,
+.editor{
+
+    border:none;
+
+    padding:18px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    transition:.35s;
+
+}
+
+
+.download{
+
+    background:#000;
+
+    color:#fff;
+
+}
+
+.download:hover{
+
+    background:#e60000;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(230,0,0,.35);
+
+}
+
+
+.editor{
+
+    background:#f5f5f5;
+
+    color:#000;
+
+}
+
+.editor:hover{
+
+    background:#000;
+
+    color:#fff;
+
+    transform:translateY(-5px);
+
+}
+
+
+/*====================================================
+ANIMACIÓN ENTRADA
+====================================================*/
+
+.upload-card,
+.colors,
+.gallery,
+.buttons{
+
+    animation:fadeUp .8s ease;
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*====================================================
+RESPONSIVE
+====================================================*/
+
+@media(max-width:1100px){
+
+.right{
+
+    width:100%;
+
+}
+
+.gallery-images{
+
+    justify-content:center;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.upload-card,
+.colors,
+.gallery{
+
+    padding:20px;
+
+}
+
+.buttons{
+
+    width:100%;
+
+}
+
+.download,
+.editor{
+
+    width:100%;
+
+}
+
+.thumb{
+
+    width:75px;
+
+    height:75px;
+
+}
+
+}
+
+
+/*==================================================
+RESPONSIVE FINAL - CELULARES
+==================================================*/
+
+@media (max-width: 768px){
+
+    /*=========================================
+    AJUSTE GENERAL
+    =========================================*/
+
+    html,
+    body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+    }
+
+    *{
+        max-width:100%;
+    }
+
+
+    /*=========================================
+    HEADER
+    =========================================*/
+
+    .header{
+        position:fixed;
+        top:0;
+        left:0;
+
+        width:100%;
+        height:auto;
+        min-height:165px;
+
+        padding:12px 15px 15px;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+        gap:12px;
+    }
+
+
+    /* LOGO */
+
+    .logo{
+        width:170px;
+        height:43px;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        flex-shrink:0;
+    }
+
+    .logo img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+
+
+    /*=========================================
+    MENÚ
+    =========================================*/
+
+    .menu{
+        width:100%;
+
+        margin:0;
+        padding:0;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        gap:18px;
+        flex-wrap:nowrap;
+    }
+
+    .menu li{
+        white-space:nowrap;
+    }
+
+    .menu a{
+        font-size:14px;
+    }
+
+    .menu a::after{
+        height:2px;
+        bottom:-5px;
+    }
+
+
+    /*=========================================
+    BOTONES DEL HEADER
+    =========================================*/
+
+    .acciones{
+        width:100%;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        gap:8px;
+        flex-wrap:nowrap;
+    }
+
+    .icon-btn{
+        padding:10px 14px;
+
+        font-size:12px;
+
+        white-space:nowrap;
+    }
+
+
+    /*=========================================
+    HERO
+    =========================================*/
+
+    .hero{
+        width:100%;
+
+        min-height:100svh;
+        height:100svh;
+
+        padding-top:165px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        overflow:hidden;
+    }
+
+    .video-bg{
+        width:100%;
+        height:100%;
+
+        object-fit:cover;
+        object-position:center;
+    }
+
+    .hero-content{
+        width:90%;
+        max-width:500px;
+
+        padding:20px;
+
+        gap:15px;
+
+        text-align:center;
+    }
+
+    .hero-content h1{
+        width:100%;
+
+        font-size:2rem;
+        line-height:1.2;
+
+        overflow-wrap:break-word;
+    }
+
+    .hero-content p{
+        width:100%;
+
+        font-size:15px;
+        line-height:1.6;
+
+        overflow-wrap:break-word;
+    }
+
+
+    /*=========================================
+    FLECHAS
+    =========================================*/
+
+    .arrow{
+        width:42px;
+        height:42px;
+
+        font-size:20px;
+    }
+
+    .left{
+        left:10px;
+    }
+
+    .right{
+        right:10px;
+    }
+
+
+    /*=========================================
+    PUNTOS
+    =========================================*/
+
+    .dots{
+        bottom:20px;
+        gap:10px;
+    }
+
+    .dot{
+        width:10px;
+        height:10px;
+    }
+
+
+    /*=========================================
+    BOTÓN CTA
+    =========================================*/
+
+    .cta-btn{
+        padding:14px 28px;
+        font-size:15px;
+
+        max-width:90%;
+    }
+
+
+    /*=========================================
+    PERSONALIZADOR
+    =========================================*/
+
+    .container{
+        width:100%;
+        min-height:100vh;
+
+        padding:185px 15px 40px;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        gap:25px;
+
+        overflow:hidden;
+    }
+
+
+    /* PANEL IZQUIERDO */
+
+    .left{
+        width:100%;
+        max-width:100%;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+
+    /* VISOR */
+
+    .viewer{
+        width:100%;
+        max-width:100%;
+
+        padding:18px;
+
+        border-radius:20px;
+    }
+
+
+    /* BOTÓN ROTAR */
+
+    .viewer-top{
+        width:100%;
+
+        display:flex;
+        justify-content:flex-end;
+    }
+
+    .rotate{
+        padding:10px 15px;
+        font-size:13px;
+    }
+
+
+    /* MOCKUP */
+
+    .mockup{
+        width:100%;
+        height:auto;
+
+        min-height:300px;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .mockup img{
+        width:100%;
+        max-width:320px;
+        height:auto;
+    }
+
+
+    /* CONTROLES */
+
+    .viewer-controls{
+        width:100%;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        gap:10px;
+        flex-wrap:wrap;
+    }
+
+    .viewer-controls button{
+        width:48px;
+        height:48px;
+
+        font-size:16px;
+    }
+
+
+    /*=========================================
+    PANEL DERECHO
+    =========================================*/
+
+    .right{
+        width:100%;
+        max-width:100%;
+
+        display:flex;
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+
+    /*=========================================
+    TARJETAS
+    =========================================*/
+
+    .upload-card,
+    .colors,
+    .gallery{
+        width:100%;
+        max-width:100%;
+
+        padding:20px;
+
+        border-radius:20px;
+    }
+
+
+    /*=========================================
+    UPLOAD
+    =========================================*/
+
+    .upload-card i{
+        font-size:45px;
+    }
+
+    .upload-card h3{
+        font-size:20px;
+    }
+
+    .upload-card p{
+        font-size:14px;
+        line-height:1.6;
+    }
+
+
+    /*=========================================
+    COLORES
+    =========================================*/
+
+    .color-list{
+        width:100%;
+
+        display:flex;
+        flex-wrap:wrap;
+
+        gap:12px;
+    }
+
+    .color{
+        width:38px;
+        height:38px;
+        flex-shrink:0;
+    }
+
+
+    /*=========================================
+    GALERÍA
+    =========================================*/
+
+    .gallery-header{
+        width:100%;
+
+        gap:10px;
+        flex-wrap:wrap;
+    }
+
+    .gallery-header h3{
+        font-size:18px;
+    }
+
+    .gallery-header a{
+        font-size:13px;
+    }
+
+    .gallery-images{
+        width:100%;
+
+        display:flex;
+        justify-content:center;
+
+        gap:10px;
+    }
+
+    .thumb{
+        width:70px;
+        height:70px;
+    }
+
+
+    /*=========================================
+    BOTONES
+    =========================================*/
+
+    .buttons{
+        width:100%;
+
+        display:flex;
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+    .download,
+    .editor{
+        width:100%;
+
+        padding:15px;
+
+        font-size:15px;
+    }
+}
+
+
+/*==================================================
+CELULARES MUY PEQUEÑOS
+320px - 380px
+==================================================*/
+
+@media (max-width:380px){
+
+    /* HEADER */
+
+    .header{
+        min-height:158px;
+
+        padding:10px 10px 12px;
+
+        gap:10px;
+    }
+
+    .logo{
+        width:155px;
+        height:40px;
+    }
+
+    .menu{
+        gap:13px;
+    }
+
+    .menu a{
+        font-size:13px;
+    }
+
+    .acciones{
+        gap:6px;
+    }
+
+    .icon-btn{
+        padding:9px 11px;
+        font-size:11px;
+    }
+
+
+    /* HERO */
+
+    .hero{
+        padding-top:158px;
+    }
+
+    .hero-content{
+        width:94%;
+        padding:10px;
+    }
+
+    .hero-content h1{
+        font-size:1.7rem;
+    }
+
+    .hero-content p{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+    .cta-btn{
+        padding:12px 22px;
+        font-size:14px;
+    }
+
+
+    /* FLECHAS */
+
+    .arrow{
+        width:36px;
+        height:36px;
+
+        font-size:17px;
+    }
+
+    .left{
+        left:6px;
+    }
+
+    .right{
+        right:6px;
+    }
+
+
+    /* PERSONALIZADOR */
+
+    .container{
+        padding:175px 10px 30px;
+    }
+
+    .viewer{
+        padding:14px;
+        border-radius:17px;
+    }
+
+    .rotate{
+        padding:9px 12px;
+        font-size:12px;
+    }
+
+    .mockup{
+        min-height:250px;
+    }
+
+    .mockup img{
+        max-width:270px;
+    }
+
+    .viewer-controls{
+        gap:8px;
+    }
+
+    .viewer-controls button{
+        width:44px;
+        height:44px;
+    }
+
+    .upload-card,
+    .colors,
+    .gallery{
+        padding:17px;
+    }
+
+    .thumb{
+        width:62px;
+        height:62px;
+    }
+}
